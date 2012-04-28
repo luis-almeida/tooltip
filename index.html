@@ -1,99 +1,104 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Pure CSS arrow with border (tooltip demo)</title>
-        <style>
-            body { 
-                background: #32373D; 
-                text-align:center; 
-            }
-            
-            a {
-                position: relative;
-                cursor: pointer;
-                font: normal normal 85% sans-serif;
-                color: white;
-                text-shadow: #090A0B 0 -1px;
-                display: inline-block;
-                margin: 300px 0;
-            }
-            
-            a > i {
-                text-align: center;
-                font: italic normal 90% Georgia, serif;
-                line-height: 150%;
-                color: black;
-                text-shadow: white 0 1px;
-                background: #DDD;
+		<title>Pure CSS arrow with border (tooltip demo)</title>
+		<style>
+			body { 
+				background: #32373D; 
+				text-align:center; 
+			}
+			
+			span {
+				position: relative;
+				cursor: default;
+				font: normal normal 85% sans-serif;
+				color: white;
+				text-shadow: #090A0B 0 -1px;
+				display: inline-block;
+				margin: 300px 0;
+			}
+			
+			span > i {
+				text-align: center;
+				font: italic normal 90% Georgia, serif;
+				line-height: 150%;
+				color: black;
+				text-shadow: white 0 1px;
+                background: -webkit-linear-gradient(#DDD, #CCC);
+                background:    -moz-linear-gradient(#DDD, #CCC);
+                background:     -ms-linear-gradient(#DDD, #CCC);
+                background:      -o-linear-gradient(#DDD, #CCC);
+                background:         linear-gradient(#DDD, #CCC);
                 background-clip: padding-box;
-                box-shadow: 0 0px 2px rgba(0, 0, 0, 0.5);
-                border: 5px solid #111;
-                border: 5px solid rgba(0, 0, 0, 0.5);
-            	border-radius: 3px;
-                position: absolute;
-                width: 250px;
-                left: 50%;
-                margin-left: -125px;
-                padding: 10px 0;
-                bottom: 100%;
-                margin-bottom: 15px;
-                visibility:hidden;
-                opacity:0;
-                -webkit-transition: opacity 0.5s linear;
-                -moz-transition: opacity 0.5s linear;
-            	-ms-transition: opacity 0.5s linear;
-            	-o-transition: opacity 0.5s linear;
-            	transition: opacity 0.5s linear;
-            }
-            
-            a > i:before, a > i:after {
-                content: "";
-                position: absolute;
-                border-left: 10px solid transparent;
-                border-right: 10px solid transparent;
-                top: 100%;
-                left: 50%;
-                margin-left: -10px;
-            }
-            
-            a > i:before {
-                border-top: 10px solid #111;
-                border-top: 10px solid rgba(0, 0, 0, 0.5);
-                margin-top: 5px;
-            }
-            
-            a > i:after{
-                border-top: 10px solid #DDD;
-                margin-top: -2px;
-                z-index: 1;
-            }
-            
-            a:hover > i {
-                visibility: visible;
-                opacity: 1;
-            }
-        </style>
-    </head>
-    <body>
-        <a>Hover here!<i>This tootips's arrow also has a border.<br>Pure CSS!</i></a>
-        
-        <br>
-        
-        <a href="https://twitter.com/share" class="twitter-share-button" data-text="Pure CSS arrow with border (tooltip demo)" data-via="lmgalmeida" data-related="lmgalmeida" data-url="http://luis-almeida.github.com/tooltip/">Tweet</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    
-        <script type="text/javascript">
-        
-          var _gaq = _gaq || [];
-          _gaq.push(['_setAccount', 'UA-30359459-1']);
-          _gaq.push(['_trackPageview']);
-        
-          (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-          })();
-        
-        </script>
-    </body>
+				box-shadow: 0 0px 2px rgba(0, 0, 0, 0.5);
+				border: 5px solid #111;
+				border: 5px solid rgba(0, 0, 0, 0.5);
+				border-radius: 3px;
+				position: absolute;
+				width: 250px;
+				left: 50%;
+				margin-left: -125px;
+				padding: 10px 0;
+				bottom: 100%;
+				margin-bottom: 15px;
+				visibility:hidden;
+				opacity:0;
+				-webkit-transition: opacity 0.5s linear;
+				   -moz-transition: opacity 0.5s linear;
+				    -ms-transition: opacity 0.5s linear;
+				     -o-transition: opacity 0.5s linear;
+				transition: opacity 0.5s linear;
+			}
+			
+			span > i:before, 
+            span > i:after {
+				content: "";
+				position: absolute;
+				border-left: 10px solid transparent;
+				border-right: 10px solid transparent;
+				top: 100%;
+				left: 50%;
+				margin-left: -10px;
+			}
+			
+			span > i:before {
+				border-top: 10px solid #111;
+				border-top: 10px solid rgba(0, 0, 0, 0.5);
+				margin-top: 5px;
+			}
+			
+			span > i:after{
+				border-top: 10px solid #CCC;
+				margin-top: -2px;
+				z-index: 1;
+			}
+			
+			span:hover > i {
+				visibility: visible;
+				opacity: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<span>Hover here!<i>This tootips's arrow also has a border.<br>Pure CSS!</i></span>
+		
+		<br>
+		
+		<a href="https://twitter.com/share" class="twitter-share-button" data-text="Pure CSS arrow with border (tooltip demo)" data-via="lmgalmeida" data-related="lmgalmeida" data-count="none">Tweet</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		
+		<a href="http://github.com/luis-almeida"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://a248.e.akamai.net/camo.github.com/bec6c51521dcc8148146135149fe06a9cc737577/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a>
+		
+		<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-30359459-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+		</script>
+	</body>
 </html>
